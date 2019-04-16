@@ -1,0 +1,18 @@
+#Input section 
+input:
+  #input fasta file name
+  fasta: Sbicolor_454_v3.1.1.protein_primaryTranscriptOnly.fa
+  # output file basename
+  basename: Sbicolor.v3.1.1
+  #input NCBI taxonomy id
+  taxon: "4558"
+  # Name of the species
+  species: "Sorghum bicolor"
+  # Email is mandatory
+  email: kokulapalan@gmail.com
+  #Number of CPUs used for tools
+  cpus: 28
+  #Whether openmpi should be used
+  mpi: True
+  #what the name of the 
+  tmpdir: "/tmpdir"
