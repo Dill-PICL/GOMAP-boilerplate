@@ -1,0 +1,1 @@
+# GOMAP-singularity Boilerplate
