@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -N 1
-#SBATCH -p RM
+#SBATCH -p RM-small
 #SBATCH --ntasks-per-node 28
 #SBATCH -t 8:00:00
 #SBATCH --job-name=Sbicolor-v3.1.1-fanngo
@@ -12,9 +12,10 @@
 
 
 
-module load mpi/gcc_mvapich  singularity/2.6.0 matlab/R2018b
+module load singularity/2.6.1 matlab/R2018a
 export GOMAP_LOC="/pylon5/bc5fp5p/kokul84/GOMAP/GOMAP-singularity"
-export MATLAB_LOC="/opt/packages/matlab/R2018b/"
+export MATLAB_LOC="$MATLABROOT"
 export tmpdir="$RAMDISK"
 
 $GOMAP_LOC/run-GOMAP-SINGLE.sh --step=fanngo --config=config.yaml
+#matlab -nojvm -nodisplay -nosplash < GOMAP-Sbicolor.v3.1.1/tmp/mixed-meth/fanngo/Sbicolor.v3.1.1.fanngo.m
