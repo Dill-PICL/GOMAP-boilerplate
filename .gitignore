@@ -1,2 +1,6 @@
 .ipynb_checkpoints/
 *.gz
+*.out
+*.err
+GOMAP-*
+tmp
