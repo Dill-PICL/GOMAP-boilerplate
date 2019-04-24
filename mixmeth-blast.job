@@ -8,15 +8,11 @@
 #SBATCH --mail-user=kokul@iastate.edu
 #SBATCH -o %x.out
 #SBATCH -e %x.err
-#SBATCH -C EGRESS
 
 
-module load mpi/gcc_mvapich  singularity/2.6.0 matlab/R2018b
+source load_modules.sh
+export GOMAP_LOC="/path/to/GOMAP-singularity/"
+export tmpdir="$LOCAL"
 unset SINGULARITY_TMPDIR
-export GOMAP_LOC="/pylon5/bc5fp5p/kokul84/GOMAP/GOMAP-singularity"
-export MATLAB_LOC="/opt/packages/matlab/R2018b/"
-export tmpdir="$RAMDISK"
-echo $tmpdir
-
 
 $GOMAP_LOC/run-GOMAP-mpi.sh --step=mixmeth-blast --config=config.yaml
