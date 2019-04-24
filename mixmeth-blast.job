@@ -2,13 +2,12 @@
 #SBATCH -N 20
 #SBATCH --ntasks-per-node 1
 #SBATCH -t 8:00:00
-#SBATCH --job-name=Sbicolor-v3.1.1-mm-blast
+#SBATCH --job-name=mixmeth-blast
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=you@domain.com
 #SBATCH -o %x.out
 #SBATCH -e %x.err
 
 source setenv.sh
-export GOMAP_LOC="/path/to/GOMAP-singularity/"
 
 $GOMAP_LOC/run-GOMAP-mpi.sh --step=mixmeth-blast --config=config.yaml

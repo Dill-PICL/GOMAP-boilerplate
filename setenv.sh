@@ -6,3 +6,6 @@ export tmpdir="$LOCAL"
 
 # Loading necessary modules and this would be specific to each cluster
 module load mpi/gcc_mvapich singularity/2.6.0
+
+#Set the location of GOMAP-singularity base directory
+export GOMAP_LOC="/path/to/GOMAP-singularity/"
