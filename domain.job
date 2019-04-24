@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH -N 20
-#SBATCH -p RM
 #SBATCH --ntasks-per-node 1
 #SBATCH -t 8:00:00
 #SBATCH --job-name=Sbicolor-v3.1.1-domain
@@ -9,9 +8,7 @@
 #SBATCH -o %x.out
 #SBATCH -e %x.err
 
-
-source load_modules.sh
+source setenv.sh
 export GOMAP_LOC="/path/to/GOMAP-singularity/"
-export tmpdir="$LOCAL"
 
 $GOMAP_LOC/run-GOMAP-mpi.sh --step=domain --config=config.yaml

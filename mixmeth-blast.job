@@ -1,18 +1,14 @@
 #!/bin/bash
 #SBATCH -N 20
-#SBATCH -p RM
 #SBATCH --ntasks-per-node 1
 #SBATCH -t 8:00:00
 #SBATCH --job-name=Sbicolor-v3.1.1-mm-blast
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=kokul@iastate.edu
+#SBATCH --mail-user=you@domain.com
 #SBATCH -o %x.out
 #SBATCH -e %x.err
 
-
-source load_modules.sh
+source setenv.sh
 export GOMAP_LOC="/path/to/GOMAP-singularity/"
-export tmpdir="$LOCAL"
-unset SINGULARITY_TMPDIR
 
 $GOMAP_LOC/run-GOMAP-mpi.sh --step=mixmeth-blast --config=config.yaml

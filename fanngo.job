@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH -N 1
-#SBATCH -p RM-small
 #SBATCH --ntasks-per-node 28
 #SBATCH -t 8:00:00
 #SBATCH --job-name=Sbicolor-v3.1.1-fanngo
@@ -9,10 +8,7 @@
 #SBATCH -o %x.out
 #SBATCH -e %x.err
 
-
-
-source load_modules.sh
+source setenv.sh
 export GOMAP_LOC="/path/to/GOMAP-singularity/"
-export tmpdir="$LOCAL"
 
 $GOMAP_LOC/run-GOMAP-SINGLE.sh --step=fanngo --config=config.yaml
