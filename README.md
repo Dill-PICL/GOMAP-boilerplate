@@ -58,7 +58,7 @@ module load mpich
 
 # Load the singulairy module. GOMAP-singulrity currently only works with Singulairty 2.6.
 x and you have to use the correct version
-module load singularity/2.6.x
+module load singularity/3.1.x
 
 #Set the location of GOMAP-singularity base directory. This is essential to correctly run the pipeline
 export GOMAP_LOC="/path/to/GOMAP-singularity/"
